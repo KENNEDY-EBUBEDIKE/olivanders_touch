@@ -15,4 +15,4 @@ class StaticViewSitemap(sitemaps.Sitemap):
         return reverse(item)
 
     def lastmod(self, obj):
-        return datetime.datetime.now(tz=timezone('Africa/Lagos'))
+        return datetime.datetime.now(tz=timezone('Africa/Lagos')).date()
