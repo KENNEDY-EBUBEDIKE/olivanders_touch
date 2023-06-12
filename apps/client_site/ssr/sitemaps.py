@@ -1,7 +1,6 @@
 from django.contrib import sitemaps
 from django.urls import reverse
-import datetime
-from pytz import timezone
+# from datetime import datetime, timezone
 
 
 class StaticViewSitemap(sitemaps.Sitemap):
@@ -14,5 +13,5 @@ class StaticViewSitemap(sitemaps.Sitemap):
     def location(self, item):
         return reverse(item)
 
-    def lastmod(self, obj):
-        return datetime.datetime.now(tz=timezone('Africa/Lagos')).date()
+    # def lastmod(self, obj):
+    #     return "2023-06-12 00:00 +00:00"
