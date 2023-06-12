@@ -1,9 +1,17 @@
 from django.urls import path
 from django.conf import settings
 from .views import home, about_us, contact_us, appointment, booking, calendar
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap
 
+sitemaps = {
+    "static": StaticViewSitemap,
+}
 
 urlpatterns = [
+
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
     path('', home, name="home"),
     path('about-us/', about_us, name="about_us"),
     path('contact-us/', contact_us, name="contact_us"),
