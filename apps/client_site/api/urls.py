@@ -1,9 +1,11 @@
 from django.urls import path
 from django.conf import settings
+from .views import booking, contact
 
 
 urlpatterns = [
-
+    path('booking/', booking, name='booking'),
+    path('contact-form/', contact, name='contact'),
 
 ]
 
